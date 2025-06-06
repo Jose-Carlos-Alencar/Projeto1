@@ -1,155 +1,339 @@
-<!DOCTYPE html>  
-<html lang="pt-BR">  
-<head>  
-<meta charset="UTF-8" />  
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-<title>Comunidade Geek</title>  
-<!-- Google Fonts para uma fonte mais estilosa -->  
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">  
-<style>  
-  /* Reset básico */  
-  * {  
-    box-sizing: border-box;  
-    margin: 0;  
-    padding: 0;  
-  }  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fórmula 1 - Todos os Pilotos e Contato</title>
+<style>
+    /* Fonte e reset básico */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-  body {  
-    font-family: 'Roboto', sans-serif;  
-    background-color: #141414;  
-    color: #f0f0f0;  
-    line-height: 1.6;  
-  }  
+    /* Variáveis de cor para tema escuro com destaque vermelho */
+    :root {
+      --cor-fundo: #000000;
+      --cor-vermelho-escuro: #b30000;
+      --cor-vermelho-vibrante: #ff1a1a;
+      --cor-texto-claro: #f0f0f0;
+      --cor-cinza-claro: #e6e6e6;
+      --cor-form-fundo: #f9fafb;
+      --cor-form-texto: #111827;
+      --cor-form-subtexto: #6b7280;
+      --radius-card: 0.75rem;
+      --sombra-card: 0 2px 8px rgb(0 0 0 / 0.25);
+      --shadow-menu: 0 -3px 6px #660000;
+    }
 
-  #corpo {  
-    display: flex;  
-    flex-direction: column;  
-    min-height: 100vh;  
-  }  
+    body {
+        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto-claro);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    #corpo {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    #topo {  
+        background-color: var(--cor-vermelho-escuro);
+        height: 100px;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        padding: 0 20px;  
+        font-family: 'Impact', sans-serif;  
+        font-size: 36px; 
+        color: #fff;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px #330000;
+        gap: 1rem;
+    }
+    #topo img {
+      max-height: 80px;
+      height: auto;
+      user-select: none;
+    }
+    #menu {
+        background-color: #1a1a1a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        gap: 30px;
+        font-weight: bold;
+        box-shadow: inset 0 -2px 4px rgb(255 26 26 / 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    #menu a {
+        color: var(--cor-vermelho-vibrante);
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+        user-select: none;
+    }
+    #menu a:hover,
+    #menu a:focus-visible {
+        background-color: var(--cor-vermelho-escuro);
+        color: #fff;
+        outline: none;
+    }
+    #conteudo {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        gap: 20px;
+        flex-wrap: nowrap;
+        background-color: var(--cor-fundo);
+    }
+    #esquerda, #direita {
+        flex: 1;
+        background-color: var(--cor-fundo);
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 0 10px var(--cor-fundo);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--cor-texto-claro);
+        user-select: none;
+    }
+    #centro {
+        flex: 3;
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 0 15px var(--cor-vermelho-vibrante);
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.5;
+        overflow-y: auto;
+        max-height: 75vh;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #centro h3 {
+        margin-top: 0;
+        color: var(--cor-vermelho-vibrante);
+        font-weight: 700;
+        font-size: 28px;
+        user-select: text;
+    }
+    .piloto {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--cor-vermelho-vibrante);
+        padding-bottom: 15px;
+        user-select: text;
+    }
+    .piloto img {
+        width: 120px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid var(--cor-vermelho-escuro);
+        flex-shrink: 0;
+        filter: drop-shadow(0 0 5px var(--cor-vermelho-vibrante));
+        user-select: none;
+    }
+    .info-piloto {
+        flex: 1;
+        color: var(--cor-cinza-claro);
+    }
+    .info-piloto h4 {
+        margin: 0 0 5px 0;
+        color: #ff4d4d;
+        font-weight: 600;
+        user-select: text;
+    }
+    .info-piloto p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--cor-cinza-claro);
+        user-select: text;
+    }
+    #rodape {
+        background-color: var(--cor-vermelho-escuro);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: var(--shadow-menu);
+        margin-top: auto;
+        user-select: none;
+    }
 
-  /* Topo elegante */  
-  #topo {  
-    background-color: #222;  
-    height: 100px;  
-    display: flex;  
-    align-items: center;  
-    justify-content: center;  
-    padding: 0 20px;  
-    font-family: 'Pacifico', cursive;  
-    font-size: 30px;  
-  }  
+    /* Estilo do formulário integrado ao tema escuro com panel claro */
+    form.contact-form {
+        background-color: var(--cor-form-fundo);
+        border-radius: var(--radius-card);
+        box-shadow: var(--sombra-card);
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        color: var(--cor-form-texto);
+        max-width: 600px;
+        margin-top: 0.5rem;
+    }
 
-  #topo img {  
-    height: 70px;  
-    margin-right: 20px;  
-  }  
+    form.contact-form label {
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 0.25rem;
+        display: block;
+        font-size: 1rem;
+        user-select: text;
+    }
 
-  /* Menu com destaque */  
-  #menu {  
-    background-color: #333;  
-    display: flex;  
-    justify-content: space-around;  
-    padding: 10px 0;  
-  }  
-  #menu a {  
-    color: #f0f0f0;  
-    text-decoration: none;  
-    padding: 10px 15px;  
-    border-radius: 8px;  
-    transition: background 0.3s, color 0.3s;  
-  }  
-  #menu a:hover {  
-    background-color: #6272a4;  
-    color: #fff;  
-  }  
+    form.contact-form input[type="text"],
+    form.contact-form input[type="email"],
+    form.contact-form input[type="tel"],
+    form.contact-form textarea {
+        width: 100%;
+        border: 1px solid #d1d5db;
+        border-radius: var(--radius-card);
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: var(--cor-form-texto);
+        background-color: #ffffff;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        font-family: inherit;
+        resize: vertical;
+        user-select: text;
+    }
 
-  /* Conteúdo com espaço e flex */  
-  #conteudo {  
-    flex: 1;  
-    display: flex;  
-    padding: 20px;  
-    gap: 20px;  
-  }  
+    form.contact-form input[type="text"]:focus,
+    form.contact-form input[type="email"]:focus,
+    form.contact-form input[type="tel"]:focus,
+    form.contact-form textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgb(59 130 246 / 0.3);
+    }
 
-  /* Sidebar com informações ou imagens */  
-  #esquerda, #direita {  
-    flex: 1;  
-    background-color: #1e1e1e;  
-    padding: 20px;  
-    border-radius: 10px;  
-  }  
-  #esquerda img, #direita img {  
-    width: 100%;  
-    border-radius: 10px;  
-    margin-bottom: 15px;  
-    border: 2px solid #6272a4;  
-    transition: transform 0.3s;  
-  }  
-  #esquerda img:hover, #direita img:hover {  
-    transform: scale(1.05);  
-  }  
+    form.contact-form textarea {
+        min-height: 120px;
+    }
 
-  /* Área central com conteúdo principal */  
-  #centro {  
-    flex: 2;  
-    padding: 20px;  
-    background-color: #1b1b1b;  
-    border-radius: 10px;  
-  }  
+    form.contact-form button[type="submit"] {
+        letter-spacing: 0.05em;
+        padding: 1rem 2rem;
+        background-color: var(--cor-vermelho-escuro);
+        color: white;
+        font-weight: 700;
+        font-size: 1.125rem;
+        border: none;
+        border-radius: var(--radius-card);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        align-self: flex-start;
+        user-select: none;
+    }
 
-  /* Correção nas páginas */  
-  .pagina {  
-    display: none;  
-  }  
-  .pagina.active {  
-    display: block;  
-  }  
+    form.contact-form button[type="submit"]:hover,
+    form.contact-form button[type="submit"]:focus {
+        background-color: var(--cor-vermelho-vibrante);
+        outline: none;
+    }
 
-  /* Rodapé estiloso */  
-  #rodape {  
-    background-color: #222;  
-    padding: 15px;  
-    text-align: center;  
-    font-size: 14px;  
-  }  
+    /* Ajustes para dispositivos pequenos */
+    @media(max-width: 1024px) {
+        #conteudo {
+            flex-direction: column;
+        }
+        #esquerda, #centro, #direita {
+            width: 100%;
+            max-height: none;
+            margin-bottom: 20px;
+        }
+        #centro {
+            max-height: none;
+        }
+        form.contact-form {
+            max-width: 100%;
+        }
+        form.contact-form button[type="submit"] {
+            width: 100%;
+            text-align: center;
+            align-self: stretch;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="corpo">
+        <div id="topo">
+            <img src="imagen/Logo.png" alt="Logo Fórmula 1" />
+            Fórmula 1 - Paixão pela Velocidade
+        </div>
 
-  /* Títulos finais com estilo */  
-  h2 {  
-    color: #f0f0f0;  
-    margin-bottom: 15px;  
-  }  
+        <!-- Menu -->
+        <nav id="menu" role="navigation" aria-label="Menu principal">
+            <a href="inicio.html" tabindex="0">Início</a>
+            <a href="Pilotos.html" tabindex="0">Pilotos</a>
+            <a href="Equipes.html" tabindex="0">Equipes</a>
+            <a href="Contatos.html" tabindex="0">Contato</a>
+        </nav>
 
-  /* Botão estilizado */  
-  button {  
-    background-color: #6272a4;  
-    color: #fff;  
-    padding: 10px 20px;  
-    border: none;  
-    border-radius: 8px;  
-    cursor: pointer;  
-    font-size: 16px;  
-    margin-top: 15px;  
-    transition: background 0.3s;  
-  }  
-  button:hover {  
-    background-color: #4a5973;  
-  }  
+        <main id="conteudo" role="main">
+            <aside id="esquerda" aria-label="Coluna esquerda - conteúdo adicional">
+                <!-- Espaço para conteúdo ou anúncios -->
+            </aside>
 
-  /* Lista estilizada */  
-  ul {  
-    list-style: none;  
-  }  
-</style>  
-</head>  
-<body>  
-<div id="corpo">  
-  <!-- Cabeçalho -->  
-  <div id="topo">  
-    <img src="imagen/logo.png" alt="Logo da Comunidade Geek" />  
-    <span>Comunidade Geek</span>  
-  </div>  
+            <section id="centro" aria-labelledby="titulo-pilotos">
+               
+                
+                                <!-- Formulário -->
+                <section aria-labelledby="titulo-contato" style="margin-top:2.5rem;">
+                  <h3 id="titulo-contato" style="color: var(--cor-vermelho-vibrante); user-select:text;">Contato</h3>
+                  <form class="contact-form" action="#" method="post" novalidate>
+                    <div>
+                      <label for="nome">Nome:</label>
+                      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required aria-required="true" autocomplete="name"/>
+                    </div>
 
-  <!-- Menu de navegação -->  
-  <div id="menu">  
-    <a href="#" onclick="mostrarPagina('inicio');return false;">Início</a>  
-    <a href="#" onclick="mostrarPagina('sobre');return false
+                    <div>
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required aria-required="true" autocomplete="email"/>
+                    </div>
+
+                    <div>
+                      <label for="telefone">Telefone:</label>
+                      <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="[\d\s\-\+\(\)]{8,}" aria-describedby="telefoneHelp" autocomplete="tel" />
+                      <small id="telefoneHelp" style="color:#6b7280; font-size:0.9rem; user-select:none;">Opcional</small>
+                    </div>
+
+                    <div>
+                      <label for="mensagem">Mensagem:</label>
+                      <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required aria-required="true" autocomplete="off"></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                  </form>
+                </section>
+            </section>
+
+            <aside id="direita" aria-label="Coluna direita - conteúdo adicional">
+                <!-- Espaço para conteúdo ou publicidade -->
+            </aside>
+        </main>
+
+        <footer id="rodape">
+            <p>&copy; 2025 Fórmula 1 - Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
