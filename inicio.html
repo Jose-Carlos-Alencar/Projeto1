@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fórmula 1 - Paixão pela Velocidade</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000000; /* preto */
+        color: #f0f0f0;
+    }
+    #corpo {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    #topo {  
+        background-color: #b30000; /* vermelho escuro */
+        height: 100px;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        padding: 0 20px;  
+        font-family: 'Impact', sans-serif;  
+        font-size: 36px; 
+        color: #fff;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px #330000;
+    }
+    #menu {
+        background-color: #1a1a1a; /* quase preto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        gap: 30px;
+        font-weight: bold;
+    }
+    #menu a {
+        color: #ff1a1a; /* vermelho vibrante */
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    #menu a:hover {
+        background-color: #b30000; /* vermelho escuro */
+        color: #fff;
+    }
+    #conteudo {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        gap: 20px;
+    }
+    #esquerda, #direita {
+        flex: 1;
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 0 10px #b30000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: #f0f0f0;
+    }
+    #esquerda img, #direita img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 3px solid #b30000;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 5px #ff1a1a);
+    }
+    #centro {
+        flex: 2;
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 0 15px #ff1a1a;
+        color: #fff;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+    }
+    #rodape {
+        background-color: #b30000;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 -3px 6px #660000;
+    }
+    /* Links ajustes no corpo para pequenos dispositivos */
+    @media(max-width: 768px) {
+        #conteudo {
+            flex-direction: column;
+        }
+        #esquerda, #centro, #direita {
+            flex: none;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="corpo">
+    <div id="topo">
+        <img src="imagen/Logo.png">
+
+        Fórmula 1 - Paixão pela Velocidade
+    </div>
+
+    <!-- Menu -->
+    <div id="menu">
+        <a href="inicio.html">Início</a>
+        <a href="Pilotos.html">Pilotos</a>
+        <a href="Equipes.html">Equipes</a>
+        <a href="Contatos.html">Contato</a>
+    </div>
+
+    <div id="conteudo">
+        <div id="esquerda">
+            <h3>O que é a Fórmula 1?</h3>
+            <img src="imagen/F1-Logo.png" alt="Logo Fórmula 1" />
+            <p>A Fórmula 1 é a categoria máxima do automobilismo mundial, reunindo os melhores pilotos, equipes e tecnologia em corridas emocionantes ao redor do planeta.</p>
+        </div>
+        <div id="centro">
+           <p>
+            <h3>Rápida História</h3>
+           Fundada em 1950, a Fórmula 1 é famosa por sua velocidade, estratégia e inovação tecnológica. Cada temporada traz novos desafios em circuitos icônicos, desde o Grande Prêmio de Mônaco até o de Interlagos no Brasil. Pilotos lendários e equipes históricas competem pelo cobiçado título mundial, fazendo desta modalidade um dos esportes mais assistidos e apaixonantes do mundo.
+           </p>
+           <p>
+           Além da emoção das pistas, a tecnologia utilizada na Fórmula 1 serve muitas vezes de base para o desenvolvimento de carros comerciais e outras inovações automotivas. A ilha de adrenalina e precisão que é a Fórmula 1 fascina fãs de todas as idades e nacionalidades.
+           </p>
+        </div>
+        <div id="direita">
+            <h3>Piloto em Destaque</h3>
+            <img src="imagen/Max.png" alt="Lewis Hamilton" />
+            <p>Atualmente o piloto em maior destaque e Max Emilian Verstappen, tendo sua estreia pela equipe Toro Rosso em 2015. É quatro vezes campeão da Fórmula 1 (2021, 2022, 2023, 2024) e terminou em terceiro lugar em 2019 e 2020 com a Red Bull Racing, equipe pela qual corre desde 2016. </p>
+        </div>
+    </div>
+
+    <div id="rodape">
+        <p>&copy; 2025 Fórmula 1 - Todos os direitos reservados.</p>
+    </div>
+</div>
+</body>
+</html>
+

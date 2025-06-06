@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fórmula 1 - Todos os Pilotos</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000000; /* preto */
+        color: #f0f0f0;
+    }
+    #corpo {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    #topo {  
+        background-color: #b30000; /* vermelho escuro */
+        height: 100px;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        padding: 0 20px;  
+        font-family: 'Impact', sans-serif;  
+        font-size: 36px; 
+        color: #fff;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px #330000;
+    }
+    #menu {
+        background-color: #1a1a1a; /* quase preto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        gap: 30px;
+        font-weight: bold;
+    }
+    #menu a {
+        color: #ff1a1a; /* vermelho vibrante */
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    #menu a:hover {
+        background-color: #b30000; /* vermelho escuro */
+        color: #fff;
+    }
+    #conteudo {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    #esquerda, #direita {
+        flex: 1;
+        background-color: #000000;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 0 10px #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #f0f0f0;
+    }
+    #esquerda img, #direita img {
+        max-width: 90%;
+        height: auto;
+        border-radius: 10px;
+        border: 3px solid #b30000;
+        margin-bottom: 15px;
+        filter: drop-shadow(0 0 5px #ff1a1a);
+    }
+    #centro {
+        flex: 3;
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 0 15px #ff1a1a;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.5;
+        overflow-y: auto;
+        max-height: 75vh;
+        text-align: left;
+    }
+    #centro h3 {
+        margin-top: 0;
+    }
+    .piloto {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ff1a1a;
+        padding-bottom: 15px;
+    }
+    .piloto img {
+        width: 120px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #b30000;
+        flex-shrink: 0;
+    }
+    .info-piloto {
+        flex: 1;
+    }
+    .info-piloto h4 {
+        margin: 0 0 5px 0;
+        color: #ff4d4d;
+    }
+    .info-piloto p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #e6e6e6;
+    }
+    #rodape {
+        background-color: #b30000;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 -3px 6px #660000;
+        margin-top: auto;
+    }
+    /* Ajustes para dispositivos pequenos */
+    @media(max-width: 1024px) {
+        #conteudo {
+            flex-direction: column;
+        }
+        #esquerda, #centro, #direita {
+            width: 100%;
+            max-height: none;
+            margin-bottom: 20px;
+        }
+        #centro {
+            max-height: none;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="corpo">
+        <div id="topo">
+            <img src="imagen/Logo.png">
+    
+            Fórmula 1 - Paixão pela Velocidade
+        </div>
+    
+
+    <!-- Menu -->
+    <div id="menu">
+        <a href="inicio.html">Início</a>
+        <a href="Pilotos.html">Pilotos</a>
+        <a href="Equipes.html">Equipes</a>
+        <a href="Contatos.html">Contato</a>
+    </div>
+
+    <div id="conteudo">
+        <div id="esquerda">
+            <h3>Destaques</h3>
+            <img src="imagen/pilotos/MaxVerstappen.jpg" alt="Max Verstappen" />
+            <p><strong>Max Verstappen</strong><br>Atual campeão mundial, piloto agressivo da Red Bull Racing, conhecido por sua precisão nas pistas e competitividade intensa.</p>
+            <img src="imagen/pilotos/LewisHamilton.jpg" alt="Lewis Hamilton" />
+            <p><strong>Lewis Hamilton</strong><br>7 vezes campeão mundial, icônico piloto da Mercedes, conhecido por sua velocidade e consistência.</p>
+        </div>
+
+        <div id="centro">
+            <h3>Todos os Pilotos da Temporada 2024</h3>
+            
+            <div class="piloto">
+                <img src="imagen/pilotos/MaxVerstappen.jpg" alt="Max Verstappen">
+                <div class="info-piloto">
+                    <h4>Max Verstappen (#1) - Red Bull Racing</h4>
+                    <p>Atual tetracampeão mundial, Max é conhecido por sua pilotagem agressiva e talento nato, sendo um dos pilotos mais dominantes dos últimos anos.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/SergioPerez.jpg" alt="Sergio Pérez">
+                <div class="info-piloto">
+                    <h4>Sergio Pérez (#11) - Red Bull Racing</h4>
+                    <p>Experiente piloto mexicano, conhecido por sua habilidade em gerenciar pneus e conquistar pódios importantes para a equipe.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/LewisHamilton.jpg" alt="Lewis Hamilton">
+                <div class="info-piloto">
+                    <h4>Lewis Hamilton (#44) - Mercedes</h4>
+                    <p>Sete vezes campeão mundial, um dos maiores nomes da história da Fórmula 1, com grandes habilidades em ultrapassagens e corrida sob pressão.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/GeorgeRussell.jpg" alt="George Russell">
+                <div class="info-piloto">
+                    <h4>George Russell (#63) - Mercedes</h4>
+                    <p>Jovem talento britânico com grande potencial, já mostrando performances sólidas e sendo uma promessa para o futuro da equipe Mercedes.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/CharlesLeclerc.jpg" alt="Charles Leclerc">
+                <div class="info-piloto">
+                    <h4>Charles Leclerc (#16) - Ferrari</h4>
+                    <p>Promissor piloto monegasco da Ferrari, com velocidade incrível e grande determinação para levar a equipe ao topo.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/CarlosSainz.jpg" alt="Carlos Sainz">
+                <div class="info-piloto">
+                    <h4>Carlos Sainz (#55) - Ferrari</h4>
+                    <p>Piloto espanhol consistente, que combina velocidade e inteligência de corrida para contribuir fortemente para a Ferrari.</p>
+                </div>
+            </div>
+            
+            <div class="piloto">
+                <img src="imagen/pilotos/LandoNorris.jpg" alt="Lando Norris">
+                <div class="info-piloto">
+                    <h4>Lando Norris (#4) - McLaren</h4>
+                    <p>Jovem e carismático piloto britânico, conhecido por suas performances constantes e talento promissor na equipe McLaren.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/Ocon.jpg" alt="Esteban Ocon">
+                <div class="info-piloto">
+                    <h4>Esteban Ocon (#31) - Alpine</h4>
+                    <p>Piloto francês sólido, conhecido por sua defesa aguerrida e resultados constantes para a equipe Alpine.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/Piastri.jpg" alt="Oscar Piastri">
+                <div class="info-piloto">
+                    <h4>Oscar Piastri (#81) - McLaren</h4>
+                    <p>Rookie talentoso australiano, campeão da Fórmula 2, mostrando velocidade e maturidade além dos seus anos.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/FernandoAlonso.jpg" alt="Fernando Alonso">
+                <div class="info-piloto">
+                    <h4>Fernando Alonso (#14) - Aston Martin</h4>
+                    <p>Veterano espanhol com dois títulos mundiais, conhecido por sua experiência e habilidade tática na pista.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/LanceStroll.jpg" alt="Lance Stroll">
+                <div class="info-piloto">
+                    <h4>Lance Stroll (#18) - Aston Martin</h4>
+                    <p>Piloto canadense que traz velocidade e dedicação para a equipe Aston Martin, buscando resultados melhores a cada temporada.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/PierreGasly.jpg" alt="Pierre Gasly">
+                <div class="info-piloto">
+                    <h4>Pierre Gasly (#10) - Alpine</h4>
+                    <p>Piloto francês habilidoso, conhecido por sua velocidade e capacidade de extrair performances fortes mesmo com carros menos competitivos.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/YukiTsunoda.jpg" alt="Yuki Tsunoda">
+                <div class="info-piloto">
+                    <h4>Yuki Tsunoda (#22) - AlphaTauri</h4>
+                    <p>Jovem piloto japonês, com espírito de luta e muito potencial para crescer na Fórmula 1.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/ValtteriBottas.jpg" alt="Valtteri Bottas">
+                <div class="info-piloto">
+                    <h4>Valtteri Bottas (#77) - Alfa Romeo</h4>
+                    <p>Piloto finlandês experiente, que traz consistência e velocidade para a equipe Alfa Romeo.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/GuanyuZhou.jpg" alt="Guanyu Zhou">
+                <div class="info-piloto">
+                    <h4>Guanyu Zhou (#24) - Alfa Romeo</h4>
+                    <p>Primeiro piloto chinês na Fórmula 1, demonstrando talento e esforço para crescer na categoria.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/MickSchumacher.jpg" alt="Mick Schumacher">
+                <div class="info-piloto">
+                    <h4>Mick Schumacher (#47) - Haas</h4>
+                    <p>Filho do lendário Michael Schumacher, buscando se firmar na Fórmula 1 com muita dedicação.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/KevinMagnussen.jpg" alt="Kevin Magnussen">
+                <div class="info-piloto">
+                    <h4>Kevin Magnussen (#20) - Haas</h4>
+                    <p>Piloto dinamarquês com experiência, conhecido por seu estilo agressivo e determinação nas pistas.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/NicoHulkenberg.jpg" alt="Nico Hülkenberg">
+                <div class="info-piloto">
+                    <h4>Nico Hülkenberg (#27) - Aston Martin (reserva)</h4>
+                    <p>Veterano piloto alemão, reserva da Aston Martin, muito respeitado pelo talento e profissionalismo.</p>
+                </div>
+            </div>
+
+            <div class="piloto">
+                <img src="imagen/pilotos/SebastianVettel.jpg" alt="Sebastian Vettel">
+                <div class="info-piloto">
+                    <h4>Sebastian Vettel (aposentado)</h4>
+                    <p>Quatro vezes campeão mundial, veterano e uma das grandes lendas da Fórmula 1 moderna.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="direita">
+            <h3>Legendas</h3>
+            <img src="imagen/pilotos/MaxVerstappen.jpg" alt="Max Verstappen" />
+            <p><strong>Max Verstappen</strong><br>Atual campeão mundial e principal favorito.</p>
+            <img src="imagen/pilotos/LewisHamilton.jpg" alt="Lewis Hamilton" />
+            <p><strong>Lewis Hamilton</strong><br>Lenda viva da Fórmula 1, recordista de títulos.</p>
+        </div>
+    </div>
+
+    <div id="rodape">
+        <p>&copy; 2025 Fórmula 1 - Todos os direitos reservados.</p>
+    </div>
+</div>
+</body>
+</html>
+

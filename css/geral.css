@@ -1,0 +1,91 @@
+#corpo {  
+  width: auto;  
+  height: auto;  
+  margin: 0 auto;   
+  padding: 0 20px 20px 20px;  
+  border: 3px solid rgb(0, 0, 0); 
+}  
+
+#topo {  
+  width: auto;  
+  height: 150px;  
+  padding: 0 20px 20px 20px;  
+  border: 3px solid black;  
+}  
+
+.topo {  
+  background-color: #4CAF50; /* Cor do topo */  
+  height: 100px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  color: white;  
+  font-size: 24px;  
+}  
+.menu {  
+  background-color: #333; /* Cor do menu */  
+  display: flex;  
+  justify-content: space-between; /* Distribui os botões com espaços iguais */  
+  align-items: center;  
+  height: 50px; /* Altura mínima do menu */  
+  padding: 0 20px; /* Espaçamento lateral */  
+  color: white;  
+}  
+.menu div {  
+  cursor: pointer;  
+  padding: 10px; /* Espaçamento nos botões */  
+}  
+.container {  
+  display: flex;  
+  height: calc(100vh - 150px); /* Altura total menos o topo e menu */  
+}  
+.esquerda, .centro, .direita {  
+  flex: 1; /* Cada coluna ocupa a mesma largura */  
+  padding: 10px;  
+  box-sizing: border-box; /* Para incluir padding no tamanho */  
+}  
+.esquerda img, .direita img {  
+  max-width: 100%; /* Assegura que as imagens não ultrapassem a largura da div */  
+  height: auto; /* Mantém a proporção das imagens */  
+}  
+.centro {  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+}  
+.centro {  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+}  
+
+#esquerda {  
+  width: 150px;  
+  height: adjustable;  
+  float: left; /* Alinha no canto da esquerda */  
+  padding: 0 20px 20px 20px;  
+  border: 3px solid rgb(233, 233, 233);  
+}  
+
+#direita {  
+  width: 150px;  
+  height: flex;  
+  float: right; /* Alinha no lado da direita */   
+  padding: 0 20px 20px 20px;  
+  border: 3px solid rgb(233, 233, 233);  
+}  
+
+#centro {  
+  width: flex;  
+  height: flex;  
+  padding: 0 20px 20px 20px;  
+  border: 3px solid rgb(255, 255, 255);  
+}  
+
+#rodape {  
+  width: auto;  
+  height: 50px;  
+  clear: both; /* Para evitar sobreposição com elementos flutuantes */
+  padding: 0 20px 20px 20px;  
+  border: 3px solid
+}

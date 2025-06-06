@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exemplo completo de uma página HTML com tema marrom claro e preto.">
+    <meta name="keywords" content="HTML, CSS, Web, Estrutura, Exemplo, Tema Escuro, Marrom">
+    <meta name="author" content="Seu Nome Aqui">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Estilo interno -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #f9f9f9;
+        }
+
+        header {
+            background-color: #8B4513; /* marrom escuro */
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 1em;
+            justify-content: center;
+            background-color: #111;
+            color: white;
+            padding: 0.5em 0;
+        }
+
+        nav a {
+            color: #d2b48c; /* marrom claro */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f5deb3;
+        }
+
+        .banner-promocional {
+            background-color: #a0522d;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            margin-top: 2em;
+        }
+
+        .card {
+            background-color: #222;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 1em;
+            flex: 1 1 200px;
+            box-shadow: 0 2px 5px rgba(160, 82, 45, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(160, 82, 45, 0.6);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 0.5em;
+            text-align: left;
+            color: #f5deb3;
+        }
+
+        footer {
+            background-color: #111;
+            color: #d2b48c;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .call-to-action {
+            background-color: #b35c34;
+            color: white;
+            text-align: center;
+            padding: 1.5em;
+            margin-top: 2em;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #b35c34;
+            color: white;
+            border: none;
+            padding: 0.7em 1.2em;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b35c34;
+        }
+
+        input, textarea {
+            background-color: #222;
+            color: #f5deb3;
+            border: 1px solid #555;
+            padding: 0.5em;
+            width: 100%;
+            border-radius: 4px;
+        }
+    </style>
+
+<title>Exemplo Completo - Tema Marrom Claro e Preto</title>
+</head>
+
+<body>
+    <!-- Cabeçalho principal -->
+    <header role="banner">
+        <img src="imagen/uj.png">
+        <h1>Um Jegue Todo Dia</h1>
+        <p>Um site dedicado ao nosso Jegue favorito Jazzghost (*°▽°*)╯</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav role="navigation" aria-label="Menu Principal">
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Conteúdo principal -->
+    <main id="inicio" role="main">
+
+        <!-- Seção sobre o site -->
+        <section id="sobre" aria-labelledby="titulo-sobre">
+            <h2 id="titulo-sobre">Sobre Jazzghost(Juliano Barros)</h2>
+            <p>Juliano Alvarenga Barro (Nacido 27 de fevereiro de 1991), mais conhecido por seu apelido na internet Jazzghost, 
+                é um youtuber brasileiro. Jazz tem um canal de jogos homônimo, que possui mais de 19 milhões de inscritos e 
+                mais de 5 mil vídeos, ele e conhecido principalmente por causa de seu grande carisma e humildade.</p>
+        </section>
+
+        <!-- Seção de canal do youtube -->
+       </section>
+        <p>
+               Canal no YouTube:
+               <a href="https://www.youtube.com/@Jazzghost"  target="_blank" rel="noopener noreferrer" style="color: #d2b48c; text-decoration: underline;">
+                    <img src="imagen/Jazz.png">
+                </a>
+            </p>
+        </footer>
+        </section>
+
+        <!-- Seção de tabela -->
+        <section>
+            <h2>Dados em Tabela</h2>
+            <table aria-label="Tabela de dados de exemplo">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ana Silva</td>
+                        <td>ana@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>João Oliveira</td>
+                        <td>joao@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seção de formulário -->
+        <section id="contato" aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Entre em Contato</h2>
+            <form action="/enviar" method="post">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Div 3 - Notícias ou Artigos -->
+        <div class="noticias" aria-label="Últimas notícias">
+            <h2>Últimas Notícias</h2>
+            <ul>
+                <li><strong>Notícia 1:</strong> Lorem ipsum dolor sit amet.</li>
+                <li><strong>Notícia 2:</strong> Consectetur adipiscing elit.</li>
+                <li><strong>Notícia 3:</strong> Sed do eiusmod tempor incididunt.</li>
+            </ul>
+        </div>
+
+        <!-- Div 4 - Call to Action -->
+        <div class="call-to-action">
+            <h3>Gostou do que viu?</h3>
+            <p>Faça parte da nossa comunidade e receba novidades!</p>
+            <button onclick="alert('Obrigado pela inscrição!')">Inscreva-se</button>
+        </div>
+
+        <!-- Sidebar/Aside -->
+        <aside aria-label="Barra lateral com links úteis">
+            <h3>Links Úteis</h3>
+            <ul>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Mapa do Site</a></li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

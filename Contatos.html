@@ -1,0 +1,155 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+<meta charset="UTF-8" />  
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<title>Comunidade Geek</title>  
+<!-- Google Fonts para uma fonte mais estilosa -->  
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">  
+<style>  
+  /* Reset básico */  
+  * {  
+    box-sizing: border-box;  
+    margin: 0;  
+    padding: 0;  
+  }  
+
+  body {  
+    font-family: 'Roboto', sans-serif;  
+    background-color: #141414;  
+    color: #f0f0f0;  
+    line-height: 1.6;  
+  }  
+
+  #corpo {  
+    display: flex;  
+    flex-direction: column;  
+    min-height: 100vh;  
+  }  
+
+  /* Topo elegante */  
+  #topo {  
+    background-color: #222;  
+    height: 100px;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    padding: 0 20px;  
+    font-family: 'Pacifico', cursive;  
+    font-size: 30px;  
+  }  
+
+  #topo img {  
+    height: 70px;  
+    margin-right: 20px;  
+  }  
+
+  /* Menu com destaque */  
+  #menu {  
+    background-color: #333;  
+    display: flex;  
+    justify-content: space-around;  
+    padding: 10px 0;  
+  }  
+  #menu a {  
+    color: #f0f0f0;  
+    text-decoration: none;  
+    padding: 10px 15px;  
+    border-radius: 8px;  
+    transition: background 0.3s, color 0.3s;  
+  }  
+  #menu a:hover {  
+    background-color: #6272a4;  
+    color: #fff;  
+  }  
+
+  /* Conteúdo com espaço e flex */  
+  #conteudo {  
+    flex: 1;  
+    display: flex;  
+    padding: 20px;  
+    gap: 20px;  
+  }  
+
+  /* Sidebar com informações ou imagens */  
+  #esquerda, #direita {  
+    flex: 1;  
+    background-color: #1e1e1e;  
+    padding: 20px;  
+    border-radius: 10px;  
+  }  
+  #esquerda img, #direita img {  
+    width: 100%;  
+    border-radius: 10px;  
+    margin-bottom: 15px;  
+    border: 2px solid #6272a4;  
+    transition: transform 0.3s;  
+  }  
+  #esquerda img:hover, #direita img:hover {  
+    transform: scale(1.05);  
+  }  
+
+  /* Área central com conteúdo principal */  
+  #centro {  
+    flex: 2;  
+    padding: 20px;  
+    background-color: #1b1b1b;  
+    border-radius: 10px;  
+  }  
+
+  /* Correção nas páginas */  
+  .pagina {  
+    display: none;  
+  }  
+  .pagina.active {  
+    display: block;  
+  }  
+
+  /* Rodapé estiloso */  
+  #rodape {  
+    background-color: #222;  
+    padding: 15px;  
+    text-align: center;  
+    font-size: 14px;  
+  }  
+
+  /* Títulos finais com estilo */  
+  h2 {  
+    color: #f0f0f0;  
+    margin-bottom: 15px;  
+  }  
+
+  /* Botão estilizado */  
+  button {  
+    background-color: #6272a4;  
+    color: #fff;  
+    padding: 10px 20px;  
+    border: none;  
+    border-radius: 8px;  
+    cursor: pointer;  
+    font-size: 16px;  
+    margin-top: 15px;  
+    transition: background 0.3s;  
+  }  
+  button:hover {  
+    background-color: #4a5973;  
+  }  
+
+  /* Lista estilizada */  
+  ul {  
+    list-style: none;  
+  }  
+</style>  
+</head>  
+<body>  
+<div id="corpo">  
+  <!-- Cabeçalho -->  
+  <div id="topo">  
+    <img src="imagen/logo.png" alt="Logo da Comunidade Geek" />  
+    <span>Comunidade Geek</span>  
+  </div>  
+
+  <!-- Menu de navegação -->  
+  <div id="menu">  
+    <a href="#" onclick="mostrarPagina('inicio');return false;">Início</a>  
+    <a href="#" onclick="mostrarPagina('sobre');return false
